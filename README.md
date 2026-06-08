@@ -14,7 +14,7 @@ Desarrollado en **.NET 9** utilizando **C#** y **Entity Framework Core**. Sigue 
 - **`HealthCore.Infrastructure`**: Implementación de acceso a datos (Entity Framework Core), repositorios y servicios externos.
 
 ### Frontend (`/frontend`)
-*(Próximamente)* - Se añadirá en las próximas fases del proyecto.
+Desarrollado con **Next.js** (React). Esta capa se encarga de la interfaz de usuario, conectándose con la API del backend para consumir y enviar datos.
 
 ---
 
@@ -22,10 +22,11 @@ Desarrollado en **.NET 9** utilizando **C#** y **Entity Framework Core**. Sigue 
 
 Para poder ejecutar este proyecto localmente, necesitas tener instaladas las siguientes herramientas:
 
-1. **[.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)** o superior.
-2. Un IDE recomendado como **Visual Studio 2022**, **JetBrains Rider** o **Visual Studio Code**.
-3. **SQL Server** (Para entorno de desarrollo local, viene configurado por defecto para usar `(localdb)\MSSQLLocalDB`).
-4. **Git** para el control de versiones.
+1. **[.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)** o superior (Para el Backend).
+2. **[Node.js](https://nodejs.org/)** (v18 o superior recomendado, para el Frontend).
+3. Un IDE recomendado como **Visual Studio 2022**, **JetBrains Rider** o **Visual Studio Code**.
+4. **SQL Server** (Para entorno de desarrollo local, viene configurado por defecto para usar `(localdb)\MSSQLLocalDB`).
+5. **Git** para el control de versiones.
 
 ---
 
@@ -80,11 +81,27 @@ Al iniciar correctamente, la API estará disponible. Puedes acceder a la interfa
 
 - **Swagger UI**: `https://localhost:<puerto>/swagger` o `http://localhost:<puerto>/swagger`
 
+### 5. Ejecutar el Proyecto (Frontend)
+
+En una nueva terminal, navega a la carpeta del frontend, instala las dependencias y ejecuta el servidor de desarrollo de Next.js:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+La aplicación de React/Next.js estará disponible en tu navegador, típicamente en:
+
+- **Frontend**: `http://localhost:3000`
+
+*(Asegúrate de configurar las variables de entorno `.env.local` en el frontend si es necesario para apuntar a la URL de la API del backend).*
+
 ---
 
 ## 📋 Siguientes Pasos
 
-1. **Desarrollo del Frontend**: Creación del entorno de la aplicación cliente y conexión con los endpoints del backend.
+1. **Conexión Frontend-Backend**: Asegurar que los endpoints del backend se consuman correctamente desde la interfaz en Next.js.
 2. **Autenticación/Autorización**: Implementación de JWT (JSON Web Tokens) u otro método de seguridad.
 3. **Despliegue (Deployment)**: Configuración de CI/CD para producción.
 
